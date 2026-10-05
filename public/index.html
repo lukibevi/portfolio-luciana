@@ -202,10 +202,11 @@
   .d-copy{margin-top:clamp(1.4rem,1rem + 1.4vw,2.2rem);display:grid;gap:1rem;font-size:clamp(1.04rem,.98rem + .3vw,1.2rem);line-height:1.6;max-width:36rem;color:var(--muted)}
   .d-inc{margin-top:1.6rem;display:flex;flex-wrap:wrap;gap:.45rem}
   .d-inc li{font:500 .8rem/1 var(--sans);padding:.55rem .85rem;border-radius:999px;border:1px solid var(--line2)}
-  .mos-a{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:start}
-  .mos-a > :first-child{grid-column:1/-1}
-  .mos-b{margin-top:10px;column-count:3;column-gap:10px}
-  .mos-b > *{margin:0 0 10px;break-inside:avoid}
+  .mos-a{display:block}
+  .jr{display:flex;gap:10px;margin-bottom:10px}
+  .jr.lo{justify-content:center}
+  .ji{min-width:0;overflow:hidden;border-radius:16px;background:var(--soft)}
+  .ji > .m{width:100%;height:100%;object-fit:cover;border-radius:0}
   .m{display:block;width:100%;height:auto;background:var(--soft);border-radius:16px}
   img.m{cursor:zoom-in}
   .ph.m{height:auto}
@@ -219,7 +220,7 @@
   .d-nav a:hover{border-color:var(--line2);transform:translateY(-4px)}
   .d-nav a + a{text-align:right;align-items:flex-end}
   .d-nav b{font:500 clamp(1.3rem,.7rem + 2.4vw,2.8rem)/1.05 var(--display);letter-spacing:-.005em;overflow-wrap:anywhere}
-  @media (max-width:900px){.slide{grid-template-columns:1fr}.slide > .d-left{position:static}.mos-b{column-count:2}}
+  @media (max-width:900px){.slide{grid-template-columns:1fr}.slide > .d-left{position:static}}
   @media (max-width:760px){.d-nav{grid-template-columns:1fr}.d-nav a + a{text-align:left;align-items:flex-start}}
 
   .lb{position:fixed;inset:0;z-index:200;background:rgba(10,8,10,.94);display:none;align-items:center;justify-content:center;padding:4.5rem 1rem 4rem}
@@ -492,7 +493,7 @@
   ];
 
   /* archivos de img/ (generado desde tu carpeta): [id, ancho, alto, 'i' imagen | 'v' video] */
-  ﻿var IM = {
+  var IM = {
   'viapool':[['viapool-1',1080,1350,'i'],['viapool-2',1080,1350,'i'],['viapool-3',1080,1350,'i'],['viapool-4',1080,1350,'i'],['viapool-5',1080,1350,'i']],
   'gestion-en-orden':[['gestion-en-orden-1',1080,1350,'i'],['gestion-en-orden-2',1080,1350,'i'],['gestion-en-orden-3',1080,1350,'i'],['gestion-en-orden-4',1080,1350,'i'],['gestion-en-orden-5',1080,1350,'i'],['gestion-en-orden-6',1024,1024,'i'],['gestion-en-orden-7',1024,1024,'i'],['gestion-en-orden-8',1024,1024,'i'],['gestion-en-orden-9',1024,1024,'i'],['gestion-en-orden-10',1024,1024,'i']],
   'amper-clothing':[['amper-clothing-1',1024,1024,'i'],['amper-clothing-2',1024,1024,'i'],['amper-clothing-3',1024,1024,'i'],['amper-clothing-4',1024,1024,'i'],['amper-clothing-5',1024,1024,'i'],['amper-clothing-6',1024,1024,'i'],['amper-clothing-7',1024,1024,'i'],['amper-clothing-8',1024,1024,'i'],['amper-clothing-9',1024,1024,'i'],['amper-clothing-10',1024,1024,'i'],['amper-clothing-11',1024,1024,'i']],
@@ -502,9 +503,9 @@
   'mercado-rrhh':[['mercado-rrhh-1',1080,1350,'i'],['mercado-rrhh-2',1080,1350,'i'],['mercado-rrhh-3',1080,1350,'i'],['mercado-rrhh-4',1080,1350,'i']],
   'dim':[['dim-1',1080,1350,'i'],['dim-2',1080,1350,'i'],['dim-3',1024,1024,'i'],['dim-4',1024,1024,'i'],['dim-5',1024,1024,'i'],['dim-6',1024,1024,'i'],['dim-7',1024,1024,'i'],['dim-8',1024,1024,'i']],
   'trialsfe':[['trialsfe-1',1080,1350,'i'],['trialsfe-2',1080,1350,'i'],['trialsfe-3',1080,1350,'i'],['trialsfe-4',1024,1024,'i'],['trialsfe-5',1024,1024,'i'],['trialsfe-6',1024,1024,'i'],['trialsfe-7',1024,1024,'i']],
-  'huellas':[['huellas-1',1080,1350,'i'],['huellas-2',1080,1350,'i'],['huellas-3',1080,1350,'i'],['huellas-4',1080,1350,'i'],['huellas-5',1080,1350,'i']],
-  'american-express':[['american-express-1',1080,1350,'i'],['american-express-2',1080,1350,'i'],['american-express-3',1080,1350,'i'],['american-express-4',1080,1350,'i'],['american-express-5',1080,1350,'i']],
-  'doble-b-legal':[['doble-b-legal-1',1024,1024,'i'],['doble-b-legal-2',1024,1024,'i'],['doble-b-legal-3',1024,1024,'i'],['doble-b-legal-4',1024,1024,'i'],['doble-b-legal-5',1024,1024,'i'],['doble-b-legal-6',1024,1024,'i']]
+  'huellas':[['huellas-5',1080,1350,'i'],['huellas-1',1080,1350,'i'],['huellas-2',1080,1350,'i'],['huellas-3',1080,1350,'i'],['huellas-4',1080,1350,'i']],
+  'american-express':[['american-express-4',1080,1350,'i'],['american-express-1',1080,1350,'i'],['american-express-2',1080,1350,'i'],['american-express-3',1080,1350,'i'],['american-express-5',1080,1350,'i']],
+  'doble-b-legal':[['doble-b-legal-1',1024,1024,'i'],['doble-b-legal-2',1024,1024,'i'],['doble-b-legal-3',1024,1024,'i'],['doble-b-legal-5',1024,1024,'i'],['doble-b-legal-6',1024,1024,'i']]
 };
 
   var BASE = 'img/', bySlug = {};
@@ -737,12 +738,21 @@
     $('#d-inc').innerHTML = p.inc[lang].map(function(s){return '<li>'+s+'</li>'}).join('');
     $('#d-idx').textContent = pad2(p.i+1)+' / '+pad2(P.length);
     var dl = $('#d-title').parentNode; dl.style.setProperty('--pc',p.c); dl.style.setProperty('--pi',p.ink);
-    var a='', b='';
-    var cut = p.im.length<=5 ? p.im.length : 3;
-    p.im.forEach(function(m,k){ if(k<cut) a += mediaHTML(p,m,k); else b += mediaHTML(p,m,k); });
-    $('#d-mosa').innerHTML = a;
-    $('#d-mosb').innerHTML = b;
-    $('#d-mosb').style.display = b ? '' : 'none';
+    var items = p.im.map(function(m,k){ return {m:m,k:k,ar:m[1]/m[2]}; });
+    var rows = [], row = [], sum = 0, G = 10;
+    items.forEach(function(it,idx){
+      if(idx===0 && it.ar>=0.7){ rows.push({r:[it],S:it.ar,lo:false}); return; }
+      row.push(it); sum += it.ar;
+      if(sum>=1.45){ rows.push({r:row,S:sum,lo:false}); row=[]; sum=0; }
+    });
+    if(row.length){ var one = row.length===1 && row[0].ar>=0.9; rows.push({r:row,S:one?sum:Math.max(sum,1.25),lo:!one}); }
+    $('#d-mosa').innerHTML = rows.map(function(o){
+      return '<div class="jr'+(o.lo?' lo':'')+'">'+o.r.map(function(it){
+        return '<div class="ji" style="flex:0 0 calc((100% - '+(G*(o.r.length-1))+'px) * '+(it.ar/o.S).toFixed(4)+');aspect-ratio:'+it.ar.toFixed(4)+'">'+mediaHTML(p,it.m,it.k)+'</div>';
+      }).join('')+'</div>';
+    }).join('');
+    $('#d-mosb').innerHTML = '';
+    $('#d-mosb').style.display = 'none';
     watchVideos();
     var pv = P[(p.i-1+P.length)%P.length], nx = P[(p.i+1)%P.length];
     var A = $('#d-prev'), B = $('#d-next');
