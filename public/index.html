@@ -74,7 +74,8 @@
   .nav .tools{display:flex;gap:.35rem;margin-left:.5rem}
   @media (max-width:940px){.nav .lnk-serv{display:none}}
   @media (max-width:520px){.nav a:not(.cta){display:none}.pnav{padding-top:.7rem;padding-bottom:.7rem}}
-  @media (max-width:680px){.nav .lnk-about{display:none}.brand .full{display:none}.brand .ini{display:inline}}
+  @media (max-width:680px){.nav .lnk-about{display:none}}
+  @media (max-width:420px){.brand .full{display:none}.brand .ini{display:inline}}
 
   /* ---------- hero ---------- */
   .hero{position:relative;padding:clamp(6.5rem,5.4rem + 4vw,9rem) 0 clamp(2rem,1.2rem + 2vw,3.5rem);isolation:isolate}
@@ -266,7 +267,7 @@
 <div id="page">
   <header class="bar" id="bar">
     <div class="pnav">
-      <a class="brand" href="#inicio" aria-label="Luciana Bevilacqua"><i></i><span class="full">Luciana Bevilacqua</span><span class="ini">LB</span></a>
+      <a class="brand" href="#inicio" aria-label="Luciana Bevilacqua"><span class="full">Luciana Bevilacqua</span><span class="ini">LB</span></a>
       <nav class="nav" aria-label="Principal">
         <a href="#proyectos" data-t="nav_work">Proyectos</a>
         <a class="lnk-serv" href="#servicios" data-t="nav_serv">Qué hago</a>
