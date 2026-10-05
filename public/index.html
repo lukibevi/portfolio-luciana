@@ -154,6 +154,7 @@
   .sv li{font:500 .78rem/1 var(--sans);padding:.5rem .85rem;border-radius:999px;background:var(--bg);border:1px solid var(--line)}
   .sv .lnk{align-self:flex-start;margin-top:1.5rem;display:inline-flex;align-items:center;gap:.5rem;font:600 .9rem/1 var(--display);transition:gap .3s}
   .sv .lnk:hover{gap:.9rem}
+  .sv:last-child:nth-child(odd){grid-column:1/-1}
   @media (max-width:760px){.sgrid{grid-template-columns:1fr}}
 
   /* ---------- sobre mí ---------- */
@@ -311,7 +312,7 @@
           <div class="toolbox rv">
             <p class="label" data-t="tools">Herramientas</p>
             <ul>
-              <li>Illustrator</li><li>Photoshop</li><li>Premiere</li><li>InDesign</li><li>After Effects</li><li>Canva</li><li>Figma</li>
+              <li>Illustrator</li><li>Photoshop</li><li>Premiere</li><li>InDesign</li><li>After Effects</li><li>Canva</li><li>Figma</li><li data-t="tool_ai">IA</li>
             </ul>
           </div>
         </div>
@@ -395,12 +396,13 @@
         {f:'branding',c:'#a894f7',h:'Branding e identidad visual',p:'Logos, sistemas de marca y manuales para que cada marca se vea como lo que es.',tg:['Logotipo','Manual de marca','Papelería']},
         {f:'uxui',c:'#a894f7',h:'UX/UI y diseño web',p:'Sitios pensados para que se entiendan a primera vista y mantengan la identidad de la marca en cada pantalla.',tg:['Diseño web','Interfaces','Arquitectura de información']},
         {f:'social',c:'#a894f7',h:'Redes y contenido',p:'Plantillas y piezas para que la comunicación se vea consistente en cada publicación.',tg:['Plantillas','Posts','Gestión de contenido']},
-        {f:'ilu',c:'#a894f7',h:'Ilustración y gráfica',p:'Ilustración y pósters para campañas, resueltos dentro de un único sistema visual.',tg:['Ilustración','Pósters','Campañas']}
+        {f:'ilu',c:'#a894f7',h:'Ilustración y gráfica',p:'Ilustración y pósters para campañas, resueltos dentro de un único sistema visual.',tg:['Ilustración','Pósters','Campañas']},
+        {f:'all',c:'#a894f7',h:'Diseño editorial',p:'Catálogos, folletos y piezas impresas con una jerarquía clara y una lectura cómoda.',tg:['Catálogos','Folletos','Maquetación']}
       ],
       marquee:['Branding','UX/UI','Identidad visual','Diseño web','Redes sociales','Ilustración'],
       about_h:'Sobre mí',
       about_p:'Diseño para que las marcas digan lo que quieren decir, con claridad y con estilo propio. Lo que me mueve es el proceso: entender una idea, charlarla con quien la trajo y encontrar una forma visual que realmente funcione. Trabajé con marcas locales e internacionales en branding, packaging, comunicación interna y contenido digital, llevando varios clientes a la vez y adaptándome a rubros muy distintos sin perder coherencia visual.',
-      tools:'Herramientas',
+      tools:'Herramientas', tool_ai:'IA',
       c_label:'Contacto', c_h1:'Hablemos', c_h2:'de tu marca',
       c_role1:'Diseño gráfico | UX/UI',
       c_p1:'Branding, identidad visual y diseño web. Si tu marca necesita verse como lo que es, hablá conmigo.',
@@ -419,12 +421,13 @@
         {f:'branding',c:'#a894f7',h:'Branding and visual identity',p:'Logos, brand systems and manuals so every brand looks like what it is.',tg:['Logo','Brand manual','Stationery']},
         {f:'uxui',c:'#a894f7',h:'UX/UI and web design',p:'Websites designed to be understood at first glance and to keep the brand’s identity on every screen.',tg:['Web design','Interfaces','Information architecture']},
         {f:'social',c:'#a894f7',h:'Social media and content',p:'Templates and pieces so communication looks consistent in every post.',tg:['Templates','Posts','Content management']},
-        {f:'ilu',c:'#a894f7',h:'Illustration and graphics',p:'Illustration and posters for campaigns, solved within a single visual system.',tg:['Illustration','Posters','Campaigns']}
+        {f:'ilu',c:'#a894f7',h:'Illustration and graphics',p:'Illustration and posters for campaigns, solved within a single visual system.',tg:['Illustration','Posters','Campaigns']},
+        {f:'all',c:'#a894f7',h:'Editorial design',p:'Catalogs, brochures and printed pieces with a clear hierarchy and comfortable reading.',tg:['Catalogs','Brochures','Layout']}
       ],
       marquee:['Branding','UX/UI','Visual identity','Web design','Social media','Illustration'],
       about_h:'About me',
       about_p:'I design so brands say what they want to say, clearly and with their own style. What drives me is the process: understanding an idea, discussing it with the person who brought it, and finding a visual form that actually works. I’ve worked with local and international brands on branding, packaging, internal communications, and digital content, managing several clients at once and adapting to very different industries without losing visual consistency.',
-      tools:'Tools',
+      tools:'Tools', tool_ai:'AI',
       c_label:'Contact', c_h1:'Let’s talk', c_h2:'about your brand',
       c_role1:'Graphic design | UX/UI',
       c_p1:'Branding, visual identity and web design. If your brand needs to look like what it is, talk to me.',
