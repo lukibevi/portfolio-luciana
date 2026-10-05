@@ -52,6 +52,7 @@
   .prog{position:fixed;top:0;left:0;height:3px;width:0;background:var(--pri);z-index:120}
   .cur{position:fixed;left:0;top:0;z-index:150;width:5.4rem;height:5.4rem;margin:-2.7rem 0 0 -2.7rem;border-radius:50%;background:var(--pri);color:var(--on);display:grid;place-items:center;font:600 .85rem var(--display);pointer-events:none;transform:translate3d(-100px,-100px,0);transition:scale .3s cubic-bezier(.2,.8,.2,1);scale:0}
   .cur.on{scale:1}
+  .cur[hidden]{display:none}
   @media (hover:none),(pointer:coarse){.cur{display:none}}
 
   /* ---------- header ---------- */
@@ -260,7 +261,7 @@
 
 <a class="skip" href="#proyectos" data-t="skip">Saltar al contenido</a>
 <div class="prog" id="prog"></div>
-<div class="cur" id="cur"><span id="curT">Ver</span></div>
+<div class="cur" id="cur" hidden><span id="curT">Ver</span></div>
 
 <div id="page">
   <header class="bar" id="bar">
@@ -642,8 +643,7 @@
     if(fine && !reduced){
       cs.forEach(function(c){
         var m = $('.media',c);
-        c.addEventListener('mouseenter', function(){ curShow(t('view')); });
-        c.addEventListener('mouseleave', function(){ m.style.transform = ''; curHide(); });
+        c.addEventListener('mouseleave', function(){ m.style.transform = ''; });
         c.addEventListener('mousemove', function(e){
           var r = m.getBoundingClientRect();
           var px = (e.clientX-r.left)/r.width, py = (e.clientY-r.top)/r.height;
