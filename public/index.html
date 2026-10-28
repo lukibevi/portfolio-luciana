@@ -131,7 +131,12 @@
 
   /* ---------- proyectos ---------- */
   .work{padding-top:clamp(4rem,2.5rem + 5vw,8rem);padding-bottom:clamp(3rem,2rem + 4vw,6rem)}
-  .sec{font:900 clamp(2.2rem,1rem + 4.6vw,4.6rem)/.95 var(--display);letter-spacing:-.04em}
+  .sec{font:600 clamp(1.5rem,1.1rem + 1.4vw,2.3rem)/1.05 var(--display);letter-spacing:-.03em}
+  .nxt{display:flex;justify-content:center;padding:.6rem 0;color:var(--muted);opacity:.7;transition:opacity .3s,color .3s}
+  .nxt:hover{opacity:1;color:var(--ac)}
+  .nxt svg{width:22px;height:22px;animation:nb 2.2s ease-in-out infinite}
+  @keyframes nb{50%{transform:translateY(6px)}}
+  @media (prefers-reduced-motion:reduce){.nxt svg{animation:none}}
   .sec::after{content:'.';color:var(--ac)}
   .work-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:clamp(1.6rem,1rem + 2vw,2.6rem)}
   .fstick{position:sticky;top:5rem;z-index:60;display:flex;justify-content:center;margin:0 0 clamp(1.6rem,1rem + 2vw,2.8rem);pointer-events:none}
@@ -339,20 +344,23 @@
         <div class="lapsc" id="stack"></div>
       </div>
     </section>
+    <a class="nxt" href="#proyectos" aria-label="Bajar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v15M6 13l6 6 6-6"/></svg></a>
 
     <section class="work wrap" id="proyectos" aria-labelledby="t-work">
       <div class="work-head rv">
-        <h2 class="sec" id="t-work" data-t="work_h">proyectos</h2>
+        <h2 class="sec" id="t-work" data-t="work_h">Proyectos</h2>
         <p class="label" id="count" aria-live="polite"></p>
       </div>
       <div class="fstick"><div class="fbar" id="fbar2" role="group" aria-label="Filtrar proyectos por tipo de trabajo"></div></div>
       <div class="cards" id="cards"></div>
     </section>
+    <a class="nxt" href="#servicios" aria-label="Bajar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v15M6 13l6 6 6-6"/></svg></a>
 
     <section class="serv wrap" id="servicios" aria-labelledby="t-serv">
-      <h2 class="sec rv" id="t-serv" data-t="serv_h">qué hago</h2>
+      <h2 class="sec rv" id="t-serv" data-t="serv_h">Qué hago</h2>
       <div class="sgrid" id="sgrid"></div>
     </section>
+    <a class="nxt" href="#sobre" aria-label="Bajar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v15M6 13l6 6 6-6"/></svg></a>
 
     <section class="about" id="sobre" aria-labelledby="t-about">
       <div class="wrap about-grid">
@@ -368,6 +376,7 @@
         </div>
       </div>
     </section>
+    <a class="nxt" href="#contacto" aria-label="Bajar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v15M6 13l6 6 6-6"/></svg></a>
 
     <section class="contact" id="contacto" aria-labelledby="t-contact">
       <div class="wrap">
@@ -440,8 +449,8 @@
       h1:['Luciana','Bevilacqua'], lap:['Hola, soy Luciana.','Vos traés la idea, yo le doy <em>forma</em>.'],
       sub:'Marcas, interfaces y piezas visuales pensadas para verse bien y funcionar mejor.',
       f_label:'Filtrá por tipo de trabajo', all:'Todos', clear:'Ver todos', view:'Ver',
-      work_h:'proyectos', count:['proyecto','proyectos'],
-      serv_h:'qué hago', more:'Ver proyectos',
+      work_h:'Proyectos', count:['proyecto','proyectos'],
+      serv_h:'Qué hago', more:'Ver proyectos',
       serv:[
         {f:'branding',c:'#A63A22',h:'Branding e identidad visual',p:'Logos, sistemas de marca y manuales para que cada marca se vea como lo que es.',tg:['Logotipo','Manual de marca','Papelería']},
         {f:'uxui',c:'#A63A22',h:'UX/UI y diseño web',p:'Sitios pensados para que se entiendan a primera vista y mantengan la identidad de la marca en cada pantalla.',tg:['Diseño web','Interfaces','Arquitectura de información']},
@@ -465,8 +474,8 @@
       h1:['Luciana','Bevilacqua'], lap:['Hi, I’m Luciana.','You bring the idea, I give it <em>shape</em>.'],
       sub:'Brands, interfaces and visual pieces designed to look good and work better.',
       f_label:'Filter by type of work', all:'All', clear:'Show all', view:'View',
-      work_h:'projects', count:['project','projects'],
-      serv_h:'what I do', more:'View projects',
+      work_h:'Projects', count:['project','projects'],
+      serv_h:'What I do', more:'View projects',
       serv:[
         {f:'branding',c:'#A63A22',h:'Branding and visual identity',p:'Logos, brand systems and manuals so every brand looks like what it is.',tg:['Logo','Brand manual','Stationery']},
         {f:'uxui',c:'#A63A22',h:'UX/UI and web design',p:'Websites designed to be understood at first glance and to keep the brand’s identity on every screen.',tg:['Web design','Interfaces','Information architecture']},
