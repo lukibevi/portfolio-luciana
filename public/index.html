@@ -161,6 +161,32 @@
   @media (max-width:1100px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}.cards .card:nth-child(3n+2){margin-top:0}}
   @media (max-width:620px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.fstick{top:4.4rem}}
 
+
+  /* ---------- notebook ---------- */
+  .lapsc{position:relative;width:min(100%,38rem);aspect-ratio:1/0.92;justify-self:center;perspective:1400px}
+  .lap{position:absolute;left:50%;top:56%;width:66%;transform:translate(-50%,-50%) rotateX(calc(6deg + var(--my,0) * -4deg)) rotateY(calc(var(--mx,0) * 9deg));transform-style:preserve-3d;transition:transform .2s linear}
+  .lid{position:relative;aspect-ratio:16/10.4;background:#1F1D1B;border-radius:14px 14px 4px 4px;padding:4.2% 4.2% 5.4%;box-shadow:0 30px 60px -34px rgba(31,20,15,.65),inset 0 0 0 1px rgba(255,255,255,.06)}
+  .lid::before{content:"";position:absolute;top:1.8%;left:50%;width:1.2%;aspect-ratio:1;border-radius:50%;background:#3a3532;transform:translateX(-50%)}
+  .scr{position:relative;height:100%;background:#F3EEE6;border-radius:4px;overflow:hidden;padding:7% 8%;display:flex;flex-direction:column;justify-content:center}
+  .scr::after{content:"";position:absolute;inset:0;background:linear-gradient(125deg,rgba(255,255,255,.35),transparent 42%);pointer-events:none}
+  .scr .bar{position:absolute;top:0;left:0;right:0;height:9%;display:flex;align-items:center;gap:3%;padding:0 4%;border-bottom:1px solid rgba(59,20,20,.1)}
+  .scr .bar i{width:2.2%;aspect-ratio:1;border-radius:50%;background:rgba(59,20,20,.22)}
+  .typ{font:900 clamp(1rem,.5rem + 1.7vw,1.9rem)/1 var(--display);letter-spacing:-.04em;color:#3B1414;min-height:3.1em;margin-top:6%}
+  .typ em{font:italic 300 1.04em/1 var(--serif);color:#A63A22;letter-spacing:-.02em}
+  .typ .k{display:inline-block;width:.08em;height:.9em;margin-left:.06em;background:#A63A22;vertical-align:-.1em;animation:blink 1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .base{position:relative;width:118%;margin-left:-9%;height:0;padding-bottom:4.4%;background:linear-gradient(#E6DCCD,#cfc2b0);border-radius:2px 2px 18px 18px;box-shadow:0 22px 34px -20px rgba(31,20,15,.55)}
+  .base::before{content:"";position:absolute;left:50%;top:0;width:16%;height:38%;transform:translateX(-50%);background:#bfb19e;border-radius:0 0 8px 8px}
+  .pj{position:absolute;left:50%;top:44%;width:clamp(4.4rem,3rem + 4vw,6.6rem);aspect-ratio:4/5;margin:0;z-index:4;text-decoration:none;opacity:0;transform:translate(-50%,-50%) scale(.15);transition:transform 1.15s cubic-bezier(.2,.9,.25,1.15),opacity .5s;transition-delay:var(--d)}
+  .pj.out{opacity:1;transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y))) rotate(var(--r)) scale(1)}
+  .pj .in{display:block;width:100%;height:100%;border-radius:12px;overflow:hidden;background:var(--pc);box-shadow:0 18px 30px -18px rgba(31,20,15,.6);border:3px solid #FAF7F2;animation:flt 6s ease-in-out infinite;animation-delay:var(--f)}
+  .pj img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);transition:filter .4s,transform .6s}
+  .pj:hover{z-index:6}.pj:hover img{filter:none;transform:scale(1.06)}
+  .pj b{position:absolute;left:50%;bottom:-1.6rem;transform:translateX(-50%);white-space:nowrap;font:600 .7rem/1 var(--sans);text-transform:uppercase;letter-spacing:.06em;color:var(--fg);opacity:0;transition:opacity .3s}
+  .pj:hover b{opacity:1}
+  @media (max-width:960px){.lapsc{width:min(100%,30rem);margin:1rem auto 1rem}.lap{width:72%}.pj b{display:none}}
+  .hero{overflow-x:clip}
+
   /* ---------- servicios ---------- */
   .serv{padding-top:clamp(3rem,2rem + 4vw,6rem);padding-bottom:clamp(3rem,2rem + 4vw,6rem)}
   .sgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1rem,.6rem + 1.2vw,1.6rem);margin-top:clamp(1.8rem,1rem + 2vw,3rem)}
@@ -310,7 +336,7 @@
           <h1 class="h1" id="h1"></h1>
           <p class="sub" data-t="sub"></p>
         </div>
-        <div class="stack" id="stack" aria-hidden="true"></div>
+        <div class="lapsc" id="stack"></div>
       </div>
     </section>
 
@@ -411,7 +437,7 @@
     es:{
       skip:'Saltar al contenido', nav_work:'Proyectos', nav_serv:'Qué hago', nav_about:'Sobre mí', nav_contact:'Contacto',
       eyebrow:'Diseño gráfico | UX/UI', feat:'Proyecto destacado',
-      h1:['Luciana','Bevilacqua'],
+      h1:['Luciana','Bevilacqua'], lap:['hola, soy luciana.','diseño marcas desde <em>santa fe</em>.'],
       sub:'Marcas, interfaces y piezas visuales pensadas para verse bien y funcionar mejor.',
       f_label:'Filtrá por tipo de trabajo', all:'Todos', clear:'Ver todos', view:'Ver',
       work_h:'proyectos', count:['proyecto','proyectos'],
@@ -436,7 +462,7 @@
     en:{
       skip:'Skip to content', nav_work:'Projects', nav_serv:'What I do', nav_about:'About', nav_contact:'Contact',
       eyebrow:'Graphic design | UX/UI', feat:'Featured project',
-      h1:['Luciana','Bevilacqua'],
+      h1:['Luciana','Bevilacqua'], lap:['hi, I’m luciana.','I design brands from <em>santa fe</em>.'],
       sub:'Brands, interfaces and visual pieces designed to look good and work better.',
       f_label:'Filter by type of work', all:'All', clear:'Show all', view:'View',
       work_h:'projects', count:['project','projects'],
@@ -582,12 +608,29 @@
   function renderH1(){
     $('#h1').innerHTML = t('h1').map(function(s,i){return '<span class="l"><span style="--i:'+i+'">'+s+'</span></span>'}).join('');
   }
-  var STACK = ['huellas'];
+  var LAP = ['huellas','viapool','petacular','gestion-en-orden','bc-asociados','dim','amper-clothing','nutri-market'];
+  var SPOT = [[-42,-34,-8],[-13,-40,4],[16,-39,-5],[43,-28,7],[-46,6,6],[46,8,-6],[-31,38,-4],[32,40,5]];
+  var lapTimer = 0;
   function renderStack(){
-    stackEl.innerHTML = '<div class="mos one">'+STACK.map(function(s){
-      var p = bySlug[s];
-      return '<a class="mt" href="#/p/'+p.s+'" tabindex="-1" style="--pc:'+p.c+'">'+coverHTML(p)+'</a>';
-    }).join('')+'</div><a class="mcard" href="#/p/'+bySlug[STACK[0]].s+'" tabindex="-1"><b>'+t('feat')+'</b></a>';
+    clearTimeout(lapTimer);
+    var mob = matchMedia('(max-width:960px)').matches, n = mob ? 6 : 8;
+    var cards = LAP.slice(0,n).map(function(sl,i){
+      var p = bySlug[sl], o = SPOT[i], k = mob ? .8 : 1;
+      return '<a class="pj" href="#/p/'+p.s+'" aria-label="'+p.n+'" style="--pc:'+p.c+';--x:'+(o[0]*k)+'cqw;--y:'+(o[1]*k)+'cqh;--r:'+o[2]+'deg;--d:'+(i*110)+'ms;--f:-'+(i*.7)+'s"><span class="in">'+coverHTML(p)+'</span><b>'+p.n+'</b></a>';
+    }).join('');
+    stackEl.innerHTML = cards+'<div class="lap" aria-hidden="true"><div class="lid"><div class="scr"><div class="bar"><i></i><i></i><i></i></div><div class="typ" id="typ"></div></div></div><div class="base"></div></div>';
+    stackEl.style.containerType = 'size';
+    var lines = t('lap'), el = $('#typ'), out = function(){ $$('.pj',stackEl).forEach(function(c){ c.classList.add('out'); }); };
+    if(reduced){ el.innerHTML = lines.join('<br>'); out(); return; }
+    var full = lines.join('\n'), i = 0;
+    (function step(){
+      if(full.charAt(i)==='<'){ i = full.indexOf('>',i)+1; }
+      else i++;
+      el.innerHTML = full.slice(0,i).replace(/\n/g,'<br>')+(/<em>[^<]*$/.test(full.slice(0,i))?'</em>':'')+'<span class="k"></span>';
+      if(full.charAt(i-1)==='\n') out();
+      if(i < full.length) lapTimer = setTimeout(step, full.charAt(i-1)==='\n' ? 260 : 28+Math.random()*34);
+      else out();
+    })();
   }
   function renderMarquee(){}
   var hx=0,hy=0,hcx=0,hcy=0,hRaf=0;
