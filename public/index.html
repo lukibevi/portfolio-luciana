@@ -930,6 +930,22 @@
     }
   });
 
+  mail.addEventListener('click', function(e){
+    e.preventDefault();
+    var went = false;
+    function gone(){ went = true; }
+    window.addEventListener('blur', gone);
+    document.addEventListener('visibilitychange', gone);
+    window.location.href = 'mailto:' + MAIL;
+    setTimeout(function(){
+      window.removeEventListener('blur', gone);
+      document.removeEventListener('visibilitychange', gone);
+      if(went) return;
+      var url = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + MAIL;
+      if(!window.open(url, '_blank', 'noopener')) window.location.href = url;
+    }, 1300);
+  });
+
   /* ---------- aplicar idioma ---------- */
   var firstLang = true;
   function applyLang(){
