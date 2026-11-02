@@ -229,6 +229,9 @@
   .cinfo p{font-size:clamp(1.05rem,1rem + .3vw,1.2rem);max-width:28rem;color:var(--muted)}
   .mail{display:inline-flex;align-items:center;gap:.7rem;padding:1.1rem 1.6rem;border-radius:999px;background:var(--pon);color:var(--pri);font:600 .95rem/1 var(--display);text-decoration:none;transition:gap .3s cubic-bezier(.2,.8,.2,1),transform .25s ease;box-shadow:0 20px 40px -26px #000}
   .mail:hover{gap:1.05rem}
+  .mailalt{font:500 .88rem/1.4 var(--sans);color:var(--muted);max-width:none!important}
+  .mailalt button,.mailalt a{color:var(--pon);background:none;border:0;padding:0;cursor:pointer;font:inherit;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+  .mailalt button:hover,.mailalt a:hover{opacity:.8}
   .cact{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center}
   .soc{display:inline-flex;align-items:center;gap:.6rem;padding:1.05rem 1.5rem;border-radius:999px;border:1.5px solid var(--line2);color:var(--pon);font:600 .95rem/1 var(--display);text-decoration:none;transition:gap .3s cubic-bezier(.2,.8,.2,1),background-color .25s,color .25s}
   .soc:hover{gap:.95rem;background:var(--pon);color:var(--pri)}
@@ -387,6 +390,7 @@
           <div class="cinfo rv">
             <p data-t="c_p1">Branding, identidad visual y diseño web.</p>
             <div class="cact"><a class="mail" id="mail" href="mailto:lbevilacqua.design@gmail.com">lbevilacqua.design@gmail.com <svg class="i"><use href="#i-ne"/></svg></a><a class="soc" href="https://www.linkedin.com/in/lucianabevilacqua" target="_blank" rel="noopener">LinkedIn <svg class="i"><use href="#i-ne"/></svg></a></div>
+            <p class="mailalt"><span data-t="m_hint">¿No se abre tu correo?</span> <button type="button" id="mcopy" data-t="m_copy">Copiar mail</button> <span aria-hidden="true">·</span> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=lbevilacqua.design@gmail.com" target="_blank" rel="noopener" data-t="m_gmail">Abrir en Gmail</a></p>
           </div>
         </div>
         <figure class="cphoto"><img src="img/retrato.webp" width="1124" height="1406" alt="Luciana Bevilacqua" loading="lazy" decoding="async"></figure>
@@ -465,6 +469,7 @@
       c_label:'Contacto', c_h1:'Hablemos', c_h2:'de tu marca',
       c_role1:'Diseño gráfico | UX/UI',
       c_p1:'Branding, identidad visual y diseño web. Si tu marca necesita verse como lo que es, hablá conmigo.',
+      m_hint:'¿No se abre tu correo?', m_copy:'Copiar mail', m_copied:'¡Copiado!', m_gmail:'Abrir en Gmail',
       top:'Volver arriba', back:'Volver', prev:'Anterior', next:'Siguiente', img:'Imagen',
       cat:{branding:'Branding',uxui:'UX/UI',social:'Redes',ilu:'Ilustración',pap:'Papelería'}
     },
@@ -490,6 +495,7 @@
       c_label:'Contact', c_h1:'Let’s talk', c_h2:'about your brand',
       c_role1:'Graphic design | UX/UI',
       c_p1:'Branding, visual identity and web design. If your brand needs to look like what it is, talk to me.',
+      m_hint:'Email app not opening?', m_copy:'Copy email', m_copied:'Copied!', m_gmail:'Open in Gmail',
       top:'Back to top', back:'Back', prev:'Previous', next:'Next', img:'Image',
       cat:{branding:'Branding',uxui:'UX/UI',social:'Social',ilu:'Illustration',pap:'Stationery'}
     }
@@ -903,6 +909,26 @@
     });
     mail.addEventListener('mouseleave', function(){ mail.style.transform = ''; });
   }
+
+  var mcopy = $('#mcopy'), MAIL = 'lbevilacqua.design@gmail.com', mTimer = 0;
+  function mDone(){
+    mcopy.textContent = t('m_copied');
+    clearTimeout(mTimer);
+    mTimer = setTimeout(function(){ mcopy.textContent = t('m_copy'); }, 2200);
+  }
+  mcopy.addEventListener('click', function(){
+    var ok = false;
+    try{ if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(MAIL).then(mDone, legacy); return; } }catch(e){}
+    legacy();
+    function legacy(){
+      var ta = document.createElement('textarea');
+      ta.value = MAIL; ta.setAttribute('readonly',''); ta.style.cssText = 'position:fixed;left:-9999px;top:0';
+      document.body.appendChild(ta); ta.select();
+      try{ ok = document.execCommand('copy'); }catch(e){}
+      document.body.removeChild(ta);
+      if(ok) mDone(); else { window.prompt(t('m_copy'), MAIL); }
+    }
+  });
 
   /* ---------- aplicar idioma ---------- */
   var firstLang = true;
